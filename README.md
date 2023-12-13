@@ -1,4 +1,9 @@
-# CodeIgniter 4 Application Starter
+# SkillHub - Sistem Pendaftaran Pelatihan Skill
+
+Use this code to start the app:
+```
+docker-compose up
+```
 
 ## What is CodeIgniter?
 
