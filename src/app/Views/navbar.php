@@ -13,36 +13,28 @@
 
 <body>
 
-    <div class="w-20 h-screen bg-fuchsia-50 flex-col justify-start items-center inline-flex fixed left-0">
-        <div class="self-stretch h-20 justify-center items-center inline-flex">
-            <div class="w-10 h-10 justify-center items-center flex">
+    <div class="w-screen h-20 bg-fuchsia-50 justify-evenly inline-flex fixed left-0">
+        <div class="grow shrink basis-0 h-20 px-8 py-5 items-center flex">
+            <div class="w-10/12 h-10 flex">
                 <div class="origin-top-left rotate-[-15deg] w-8 h-8 relative">
                     <img class="w-8 h-8 left-[0.02px] top-[0.08px] absolute origin-top-left" src="/assets/BrandLogo.png" />
                 </div>
             </div>
         </div>
-        <div class="w-20 grow shrink basis-0 pt-11 pb-14 flex-col justify-start items-center gap-10 flex">
-            <div class="h-14 flex-col justify-start items-center gap-1 flex">
-                <div class="rounded-2xl justify-start items-start gap-2.5 inline-flex">
-                    <button class="bg-red-100 rounded-2xl shadow justify-center items-center flex">
-                        <div class="text-2xl p-2 px-3 justify-center items-center flex ">+
-                        </div>
-                    </button>
-                </div>
-            </div>
-            <div class="h-48 flex-col justify-center items-center gap-3 flex">
+        <div class="grow shrink basis-0 flex-col justify-center items-end inline-flex">
+            <div class="grow shrink basis-0 self-stretch pt-5 pb-6 justify-center items-center gap-6 inline-flex">
                 <div class="self-stretch h-14 px-0.5 pb-1 flex-col justify-start items-center gap-1 flex">
                     <button class=" rounded-full justify-center items-center inline-flex">
 
                         <div class="px-4 py-1 justify-center items-center flex">
                             <div class="w-6 h-6 relative">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M12 5L18.6574 9.83688L16.1145 17.6631H7.8855L5.3426 9.83688L12 5Z" fill="black" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.0933 13.27L20.8233 19L19.3333 20.49L13.6033 14.76C12.5333 15.53 11.2433 16 9.83325 16C6.24325 16 3.33325 13.09 3.33325 9.5C3.33325 5.91 6.24325 3 9.83325 3C13.4233 3 16.3333 5.91 16.3333 9.5C16.3333 10.91 15.8633 12.2 15.0933 13.27ZM9.83325 5C7.34325 5 5.33325 7.01 5.33325 9.5C5.33325 11.99 7.34325 14 9.83325 14C12.3233 14 14.3333 11.99 14.3333 9.5C14.3333 7.01 12.3233 5 9.83325 5Z" fill="#1D192B" />
                                 </svg>
                             </div>
                         </div>
                     </button>
-                    <div class="self-stretch text-center text-zinc-900 text-xs font-semibold  leading-none tracking-wide">Home</div>
+                    <div class="self-stretch text-center text-zinc-900 text-xs font-semibold  leading-none tracking-wide">Explore</div>
                 </div>
                 <div class="self-stretch h-14 px-0.5 pb-1 flex-col justify-start items-center gap-1 flex">
                     <button class=" rounded-full justify-center items-center inline-flex">
@@ -55,7 +47,7 @@
                             </div>
                         </div>
                     </button>
-                    <div class="self-stretch text-center text-zinc-900 text-xs font-semibold  leading-none tracking-wide">Courses</div>
+                    <div class="self-stretch text-center text-zinc-900 text-xs font-semibold  leading-none tracking-wide">My Courses</div>
                 </div>
                 <div class="self-stretch h-14 px-0.5 pb-1 flex-col justify-start items-center gap-1 flex">
                     <button class=" rounded-full justify-center items-center inline-flex">
@@ -70,33 +62,18 @@
                     </button>
                     <div class="self-stretch text-center text-zinc-900 text-xs font-semibold  leading-none tracking-wide">Schedule</div>
                 </div>
-            </div>
-        </div>
-        <div class="pt-11 pb-14 flex-col justify-start items-center gap-10 flex">
-            <div class="h-32 flex-col justify-center items-center gap-3 flex">
                 <div class="self-stretch h-14 px-0.5 pb-1 flex-col justify-start items-center gap-1 flex">
-                    <button class="rounded-full flex-col justify-center items-center flex">
-                        <div class="px-4 py-1 justify-center items-center inline-flex">
+                    <button class=" rounded-full justify-center items-center inline-flex">
+
+                        <div class="px-4 py-1 justify-center items-center flex">
                             <div class="w-6 h-6 relative">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM18.36 16.83C16.93 15.09 13.46 14.5 12 14.5C10.54 14.5 7.07 15.09 5.64 16.83C4.62 15.49 4 13.82 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 13.82 19.38 15.49 18.36 16.83ZM8.5 9.5C8.5 7.56 10.06 6 12 6C13.94 6 15.5 7.56 15.5 9.5C15.5 11.44 13.94 13 12 13C10.06 13 8.5 11.44 8.5 9.5Z" fill="#49454F" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4ZM14 8C14 6.9 13.1 6 12 6C10.9 6 10 6.9 10 8C10 9.1 10.9 10 12 10C13.1 10 14 9.1 14 8ZM18 17C17.8 16.29 14.7 15 12 15C9.3 15 6.2 16.29 6 17.01V18H18V17ZM4 17C4 14.34 9.33 13 12 13C14.67 13 20 14.34 20 17V20H4V17Z" fill="#49454F" />
                                 </svg>
                             </div>
                         </div>
                     </button>
-                    <div class="self-stretch text-center text-zinc-700 text-xs font-medium  leading-none tracking-wide">Profile</div>
-                </div>
-                <div class="self-stretch h-14 px-0.5 pb-1 flex-col justify-start items-center gap-1 flex">
-                    <button class="rounded-full flex-col justify-center items-center flex">
-                        <div class="px-4 py-1 justify-center items-center inline-flex">
-                            <div class="w-6 h-6 relative">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M19 7V11H6.83L10.41 7.41L9 6L3 12L9 18L10.41 16.59L6.83 13H21V7H19Z" fill="#49454F" />
-                                </svg>
-                            </div>
-                        </div>
-                    </button>
-                    <div class="self-stretch text-center text-zinc-700 text-xs font-medium  leading-none tracking-wide">Logout</div>
+                    <div class="self-stretch text-center text-zinc-900 text-xs font-semibold  leading-none tracking-wide">Profile</div>
                 </div>
             </div>
         </div>
