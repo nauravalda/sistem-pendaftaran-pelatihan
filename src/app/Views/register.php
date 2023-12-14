@@ -13,12 +13,12 @@
 
 <body>
 
-    <div class="w-full h-screen p-24 px-44 bg-fuchsia-50 justify-start items-start inline-flex">
+    <div class="w-full h-screen p-24 px-44 bg-on-primary-fixed justify-start items-start inline-flex">
         <div class="grow shrink rounded-3xl shadow-2xl self-stretch inline-flex">
             <div class="px-16 rounded-l-3xl py-10 bg-light-primary w-full h-full items-center justify center">
-                <div class=" left-[133px] top-[109px] text-white text-4xl font-bold">Join Us Now on EduTrack!</div>
-                <div class=" my-4 left-[133px] top-[237.69px] text-purple-200 textxl font-normal">Tired of managing your training schedule? Get your own dashboard app!</div>
-                <img class=" left-[127px] top-[424px]" src="/assets/Distanceworking.png" />
+                <div class=" left-[133px] top-[109px] text-white text-4xl font-bold">Unleash New Skills with SkillHub!</div>
+                <div class=" my-4 left-[133px] top-[237.69px] text-purple-200 textxl font-normal">Level up your expertise! Join SkillHub and master new skills effortlessly</div>
+                <img class=" w-full left-[127px] top-[424px]" src="/assets/timetolearn.png" />
 
             </div>
             <div class="px-10 rounded-r-3xl py-5 bg-white w-full h-full items-center justify center">

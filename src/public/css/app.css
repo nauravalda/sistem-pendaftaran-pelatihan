@@ -652,6 +652,9 @@ video {
 .w-8 {
   width: 2rem;
 }
+.w-96 {
+  width: 24rem;
+}
 .w-full {
   width: 100%;
 }
@@ -757,6 +760,10 @@ video {
 .bg-light-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(103 80 164 / var(--tw-bg-opacity));
+}
+.bg-on-primary-fixed {
+  --tw-bg-opacity: 1;
+  background-color: rgb(79 55 139 / var(--tw-bg-opacity));
 }
 .bg-red-100 {
   --tw-bg-opacity: 1;

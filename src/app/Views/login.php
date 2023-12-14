@@ -13,12 +13,12 @@
 
 <body>
 
-  <div class="w-full h-screen p-24 px-44 bg-fuchsia-50 justify-start items-start inline-flex">
+  <div class="w-full h-screen p-24 px-44 bg-on-primary-fixed justify-start items-start inline-flex">
     <div class="grow shrink rounded-3xl shadow-2xl self-stretch inline-flex">
       <div class="px-10 rounded-l-3xl py-10 bg-white w-full h-full items-center justify center">
         <div class="w-full justify-center items-center flex-col">
           <img class="h-12 mb-8" src="/assets/Brand.png" />
-          <div class="text-gray-600 my-6 text-2xl font-normal leading-10 items-center">Hello! Welcome back</div>
+          <div class="text-gray-600 my-6 text-2xl font-normal leading-10 items-center">Hello! Welcome to SkillHub</div>
         </div>
         <!-- <div class="self-stretch h-14 rounded-tl rounded-tr flex-col justify-start items-start flex"> -->
         <div class="my-4">
@@ -68,9 +68,9 @@
         </div>
       </div>
       <div class="px-16 rounded-r-3xl py-10 bg-light-primary w-full h-full items-center justify center">
-        <div class=" left-[133px] top-[109px] text-white text-4xl font-bold">Manage Your<br />Training Company</div>
-        <div class=" my-4 left-[133px] top-[237.69px] text-purple-200 textxl font-normal">Get your own dashboard app to manage your company training schedule</div>
-        <img class=" left-[127px] top-[424px]" src="/assets/Recruitmentcvs.png" />
+        <div class=" left-[133px] top-[109px] text-white text-4xl font-bold">Learn Something New Today!</div>
+        <div class=" my-4 left-[133px] top-[237.69px] text-purple-200 textxl font-normal">Empower your journey with SkillHub – Unleash limitless skills, one course at a time.</div>
+        <img class=" w-96 left-[127px] top-[424px]" src="/assets/Schoolsupplies.png" />
 
       </div>
     </div>
