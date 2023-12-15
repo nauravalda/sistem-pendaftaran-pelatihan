@@ -89,7 +89,7 @@
                 </div>
                 <div class="py-2 justify-center w-full items-center gap-2.5 inline-flex">
                     <div class="text-gray-600 text-base font-normal  leading-normal tracking-wide">Already have an account?</div>
-                    <button class="text-violet-900 text-base font-bold  leading-normal tracking-wide">Login</button>
+                    <a class="text-violet-900 text-base font-bold  leading-normal tracking-wide" href="/">Login</a>
                 </div>
             </div>
         </div>

@@ -24,7 +24,7 @@
         <div class="grow shrink basis-0 flex-col justify-center items-end inline-flex">
             <div class="grow shrink basis-0 self-stretch pt-5 pb-6 justify-center items-center gap-6 inline-flex">
                 <div class="self-stretch h-14 px-0.5 pb-1 flex-col justify-start items-center gap-1 flex">
-                    <button class=" rounded-full justify-center items-center inline-flex">
+                    <a class=" rounded-full justify-center items-center inline-flex" href="/courses">
 
                         <div class="px-4 py-1 justify-center items-center flex">
                             <div class="w-6 h-6 relative">
@@ -33,12 +33,11 @@
                                 </svg>
                             </div>
                         </div>
-                    </button>
+</a>
                     <div class="self-stretch text-center text-zinc-900 text-xs font-semibold  leading-none tracking-wide">Explore</div>
                 </div>
-                <div class="self-stretch h-14 px-0.5 pb-1 flex-col justify-start items-center gap-1 flex">
-                    <button class=" rounded-full justify-center items-center inline-flex">
-
+                <div class="self-stretch h-14 px-0.5 pb-1 flex-col justify-start items-center gap-1 flex" >
+                    <a class=" rounded-full justify-center items-center inline-flex" href="/mycourses">
                         <div class="px-4 py-1 justify-center items-center flex">
                             <div class="w-6 h-6 relative">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -46,11 +45,11 @@
                                 </svg>
                             </div>
                         </div>
-                    </button>
+</a>
                     <div class="self-stretch text-center text-zinc-900 text-xs font-semibold  leading-none tracking-wide">My Courses</div>
                 </div>
                 <div class="self-stretch h-14 px-0.5 pb-1 flex-col justify-start items-center gap-1 flex">
-                    <button class=" rounded-full justify-center items-center inline-flex">
+                    <a class=" rounded-full justify-center items-center inline-flex" href="/schedule">
 
                         <div class="px-4 py-1 justify-center items-center flex">
                             <div class="w-6 h-6 relative">
@@ -59,11 +58,11 @@
                                 </svg>
                             </div>
                         </div>
-                    </button>
+</a>
                     <div class="self-stretch text-center text-zinc-900 text-xs font-semibold  leading-none tracking-wide">Schedule</div>
                 </div>
                 <div class="self-stretch h-14 px-0.5 pb-1 flex-col justify-start items-center gap-1 flex">
-                    <button class=" rounded-full justify-center items-center inline-flex">
+                    <a class=" rounded-full justify-center items-center inline-flex" href="/profile">
 
                         <div class="px-4 py-1 justify-center items-center flex">
                             <div class="w-6 h-6 relative">
@@ -72,7 +71,7 @@
                                 </svg>
                             </div>
                         </div>
-                    </button>
+</a>
                     <div class="self-stretch text-center text-zinc-900 text-xs font-semibold  leading-none tracking-wide">Profile</div>
                 </div>
             </div>
