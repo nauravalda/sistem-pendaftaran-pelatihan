@@ -32,19 +32,23 @@
                     <div class="w-[724px] p-[48px] bg-white border flex border-gray-200 rounded-2xl shadow">
 
                         <div class="w-[448px] space-y-6">
-                            <h6 class="text-xl font-bold text-gray-900">The Complete Python Bootcamp From Zero to Hero in Python</h6>
-                            <p class="text-sm flex justify-center items-center font-bold text-light-primary w-24 h-8 border-2 border-gray-200 rounded-lg">Rp 28.000</p>
-                            <p class="text-sm text-gray-500">Learn Python like a Professional Start from the basics and go all the way to creating your own applications and games</p>
+                            <h6 class="text-xl font-bold text-gray-900"><?= $name; ?></h6>
+                            <?php
+                                // Menggunakan number_format untuk memformat harga menjadi format mata uang rupiah
+                                $formattedPrice = 'Rp' . number_format($price, 0, ',', '.');
+                            ?>
+                            <p class="text-sm flex justify-center items-center font-bold text-light-primary w-24 h-8 border-2 border-gray-200 rounded-lg"><?= $formattedPrice; ?></p>
+                            <p class="text-sm text-gray-500"><?= $desc; ?></p>
                             <p class="text-sm text-gray-500"><span class="font-bold">Rating :</span> 5/5 (99 Rating)</p>
-                            <p class="text-sm text-gray-500">#PythonBootcamp #PythonProgramming #LearnPython #CodingBootcamp #ProgrammingCourse #PythonFromZeroToHero #PythonDevelopment #CodingSkills #ProgrammingBeginner #SoftwareDevelopment #PythonLea...</p>
+                            <p class="text-sm text-gray-500"><?= $tags; ?></p>
                         </div>
 
                         <div class="w-[50px] border-r border-gray-200 h-auto"></div>
                         <div class="w-[50px] border-l border-gray-200 h-auto"></div>
 
                         <div class="w-[250px] h-auto space-y-4">
-                            <p class="text-sm text-gray-500">Jalan Mawar Indah VIII No. 15, RT 03/RW 07, Kelurahan Kebonwaru, Kecamatan Batununggal, Bandung</p>
-                            <p class="text-sm text-gray-500">Participants: <span class="font-bold">99/100</span></p>
+                            <p class="text-sm text-gray-500"><?= $locations; ?></p>
+                            <p class="text-sm text-gray-500">Participants: <span class="font-bold"><?= $participants; ?>/100</span></p>
                             <p class="text-sm text-gray-500">Schedule:</p>
                             <span>
                                 <p class="text-sm text-gray-500">> Kamis, at 13.00</p>
@@ -87,25 +91,33 @@
                     <div class="w-[1200px] space-y-6">
                         <h6 class="text-xl font-bold text-gray-900">Featured Review</h6>
                         <!-- Review Personal -->
+                        <?php foreach ($data_review as $review) : ?>
                         <div class="w-full p-[16px] bg-light-secondary border-[1px] border-gray-300 rounded-md space-y-2">
                             <div class="flex gap-4 items-center">
-                                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-light-primary text-white text-xl">A</div>
+                                <div class="flex items-center justify-center w-10 h-10 rounded-full bg-light-primary text-white text-xl"><?= substr($review['name'], 0, 1) ?></div>
                                 <div>
-                                    <p class="font-semibold">Aan Bejir</p>
-                                    <p class="text-gray-700">Rating : 5/5</p>
+                                    <p class="font-semibold"><?= $review['name']; ?></p>
+                                    <p class="text-gray-700">Rating : <?= $review['rating']; ?>/5</p>
                                 </div>
                             </div>
-                            <p class="text-gray-700">Everything on this course is a goldmine except for the GUI since it's specific for Jupyter Notebooks and it's missing the video for GUI Events. Still it was a nice introduction to GUI. Don't let that disappoint you though. THIS IS A MUST HAVE COURSE. I have already recommended it to few people and always will. Do yourself a favor and do this course if you want to learn Python 3. Thank you so much for this course, Jose-sensei!!</p>
+                            <p class="text-gray-700"><?= $review['desc']; ?></p>
                         </div>
-                        
+                        <?php endforeach; ?>
+
                         <!-- Masukkan Review -->
                         <div class="w-full p-[16px] bg-light-secondary border-[1px] border-gray-300 rounded-md space-y-2">
                             <div class="flex justify-between items-center">
                                 <div class="flex gap-4 items-center">
                                     <div class="flex items-center justify-center w-10 h-10 rounded-full bg-light-primary text-white text-xl">A</div>
-                                    <div>
+                                    <div class="">
                                         <p class="font-semibold">Aan Bejir</p>
-                                        <p class="text-gray-700">Rating : 5/5</p>
+                                        <!-- Input Rating -->
+                                        <div class="flex items-center whitespace-nowrap">
+                                            <p>Rating : </p>
+                                            <input type="num" id="inputRating"
+                                                class="border border-[#1D1B20] rounded-md focus:border-gray-500 focus:shadow-sm p-1 h-8 mx-1 w-12 bg-white" autocomplete="off"/>
+                                            <p>/5 <span class="text-gray-400">(Max : 5)</span></p>
+                                        </div>
                                     </div>
                                 </div>
                                 <button class="rounded-full bg-light-primary text-white text-base px-4 py-1 h-1/2">Save</button>
@@ -113,9 +125,9 @@
                             <!-- Input Review -->
                             <div class="relative h-14 w-full">
                                 <label for="inputReview"
-                                    class="absolute -top-[5px] left-4 px-1 font-sans text-sys-light-on-surface-variant leading-none bg-white w-fit"></label>
+                                    class="absolute -top-[5px] left-4 px-1 font-sans text-[#1D1B20] leading-none bg-white w-fit"></label>
                                 <input type="text" id="inputReview"
-                                    class="border border-sys-light-on-surface-variant rounded-md focus:border-gray-500 focus:shadow-sm w-full p-3 h-fit font-sans bg-white"
+                                    class="border border-[#1D1B20] rounded-md focus:border-gray-500 focus:shadow-sm w-full p-3 h-fit font-sans bg-white"
                                     placeholder="Write your review about this course" autocomplete="off" />
                             </div>
                         </div>
@@ -128,9 +140,9 @@
                     <div class="w-1/2 bg-white border border-gray-200 rounded-2xl shadow p-12 space-y-[10px]">
                         <h6 class="text-xl font-bold text-gray-900">What You'll Learn</h6>
                         <ul class="list-decimal ml-4">
-                            <li>You will learn how to leverage the power of Python to solve tasks.</li>
-                            <li>You will build games and programs that use Python libraries.</li>
-                            <li>You will be able to use Python for your own work problems or personal projects.</li>
+                            <?php foreach ($courseBenefit as $a) : ?>
+                            <li><?= $a; ?></li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
 
@@ -138,16 +150,9 @@
                         <h6 class="text-xl font-bold text-gray-900">Course Content</h6>
                         <p class="text-gray-900">Python Setup</p>
                         <ul class="list-decimal ml-4">
-                            <li>Python Object and Data Structure Basics</li>
-                            <li>Python Comparison Operators</li>
-                            <li>Python Statements</li>
-                            <li>Methods and Functions</li>
-                            <li>Milestone Project-1</li>
-                            <li>Python Object and Data Structure Basics</li>
-                            <li>Python Comparison Operators</li>
-                            <li>Python Statements</li>
-                            <li>Methods and Functions</li>
-                            <li>Milestone Project-1</li>
+                            <?php foreach ($courseContent as $a) : ?>
+                            <li><?= $a; ?></li>
+                            <?php endforeach; ?>
                         </ul>
                     </div>
                 </div>
@@ -155,7 +160,7 @@
                 <div class="w-full">
                     <div class="bg-white border border-gray-200 rounded-2xl shadow p-12 space-y-6">
                         <h6 class="text-xl font-bold text-gray-900">Description</h6>
-                        <p class="text-gray-900">Become a Python Programmer and learn one of employer's most requested skills of 2023! This is the most comprehensive, yet straight-forward, course for the Python programming language on Udemy! Whether you have never programmed before, already know basic syntax, or want to learn about the advanced features of Python, this course is for you! In this course we will teach you Python 3. With over 100 lectures and more than 21 hours of video this comprehensive course leaves no stone unturned! This course includes quizzes, tests, coding exercises and homework assignments as well as 3 major projects to create a Python project portfolio! Learn how to use Python for real-world tasks, such as working with PDF Files, sending emails, reading Excel files, Scraping websites for informations, working with image files, and much more! This course will teach you Python in a practical manner, with every lecture comes a full coding screencast and a corresponding code notebook! Learn in whatever manner is best for you! We will start by helping you get Python installed on your computer, regardless of your operating system, whether its Linux, MacOS, or Windows, we've got you covered. We cover a wide variety of topics, including:</p>
+                        <p class="text-gray-900"><?= $description; ?></p>
                         <ul class="list-decimal ml-4">
                             <li>Command Line Basics</li>
                             <li>Installing Python</li>
