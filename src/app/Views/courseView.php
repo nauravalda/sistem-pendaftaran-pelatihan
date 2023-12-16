@@ -15,8 +15,8 @@
             <div class="flex flex-wrap space-y-6">
                 <!-- Tombol back -->
                 <div class="w-full self-start text-light-primary gap-2">
-                    <button class="flex items-center text-sm font-medium font-['Roboto'] leading-tight">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="w-5 h-5">
+                    <button class="flex items-center text-sm font-semibold leading-tight">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 mr-2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
                     </svg>Back
                     </button>
@@ -109,33 +109,19 @@
                     <!-- Kartu Kurikulum dan Outcome -->
                     <div class="w-1/2 bg-white border border-gray-200 rounded-2xl shadow p-12 space-y-[10px]">
                         <h6 class="text-xl font-bold text-gray-900">What You'll Learn</h6>
-                        <ul class="list-decimal ml-4">
-                            <?php foreach ($courseBenefit as $a) : ?>
-                            <li><?= $a; ?></li>
-                            <?php endforeach; ?>
-                        </ul>
+                        <p><?= $courseBenefit; ?></p>
                     </div>
 
                     <div class="w-1/2 bg-white border border-gray-200 rounded-2xl shadow p-12 space-y-[10px]">
                         <h6 class="text-xl font-bold text-gray-900">Course Content</h6>
-                        <ul class="list-decimal ml-4">
-                            <?php foreach ($courseContent as $a) : ?>
-                            <li><?= $a; ?></li>
-                            <?php endforeach; ?>
-                        </ul>
+                        <p><?= $courseContent; ?></p>
                     </div>
                 </div>
 
                 <div class="w-full">
                     <div class="bg-white border border-gray-200 rounded-2xl shadow p-12 space-y-6">
                         <h6 class="text-xl font-bold text-gray-900">Description</h6>
-                        <p class="text-gray-900"><?= $description; ?></p>
-                        <ul class="list-decimal ml-4">
-                            <li>Command Line Basics</li>
-                            <li>Installing Python</li>
-                            <li>Running Python Code</li>
-                        </ul>
-                        <p class="text-gray-900">You will get lifetime access to over 100 lectures plus corresponding Notebooks for the lectures! This course comes with a 30 day money back guarantee! If you are not satisfied in any way, you'll get your money back. Plus you will keep access to the Notebooks as a thank you for trying out the course! So what are you waiting for? Learn Python in a way that will advance your career and increase your knowledge, all in a fun and practical way!</p>
+                        <p class="text-gray-900"><?= $desc; ?></p>
                     </div>
                 </div>
             </div>
