@@ -14,3 +14,5 @@ $routes->post('/register', 'Register::register');
 $routes->get('/logout', 'Login::logout');
 
 $routes->get('/mycourses', 'MyCourses::index');
+$routes->get('/courses', 'Courses::index');
+$routes->get('/courses/(:num)', 'Courses::detail/$1');

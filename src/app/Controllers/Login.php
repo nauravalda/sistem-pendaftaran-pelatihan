@@ -9,7 +9,7 @@ class Login extends BaseController
     {
         $session = session();
         if ($session->get('isLoggedIn')) {
-            return redirect()->to('/mycourses');
+            return redirect()->to('/courses');
         }
         return view('login').view('footer');
     }
@@ -17,10 +17,18 @@ class Login extends BaseController
     public function login()
     {
         $email = $this->request->getPost('email');
+
         $password = hash('sha256', $this->request->getPost('password'));
+  
 
         $userModel = new UserModel();
+        
         $user = $userModel->getUserByEmailAndPassword($email, $password);
+        if ($user == '') {
+            log_message('debug','user is empty');
+        }
+        // log_message('debug',$user['email']);
+        // log_message('debug',$user['password']);
 
         if ($user) {
             $session = session();
@@ -30,7 +38,7 @@ class Login extends BaseController
                 'email' => $user['email'],
                 'isLoggedIn' => true,
             ]);
-            return redirect()->to('/mycourses');
+            return redirect()->to('/courses');
         } else {
             return redirect()->to('/login');
         }
