@@ -5,6 +5,9 @@ use CodeIgniter\Model;
 
 class APIModel extends Model
 {
+    protected $db;
+
+
     protected $userTable = 'user';
     protected $enrollmentTable = 'course_enrollment';
     protected $reviewTable = 'reviews_view';
@@ -12,8 +15,17 @@ class APIModel extends Model
     protected $totalParticipantsCourse = 'total_participants_course';
     protected $totalParticipantsCourseThisMonth = 'thismonth_total_course_participants';
     protected $avgRatingCourse = 'rating_per_course';
-    
-    protected $url = 'http://localhost:8081/api/courses/john.doe@example.com/john';
+    protected $apiUrl;
+    protected $apiKey;
+    protected $url;
+
+    public function __construct() {
+        parent::__construct();
+        $this->db = \Config\Database::connect();
+        $this->apiUrl = getenv('API_URL');
+        $this->apiKey = getenv('API_KEY');
+        $this->url = $this->apiUrl . 'courses?apiKey=' . $this->apiKey;
+    }
     protected $response;
     protected $curl;
     protected $course;
@@ -28,6 +40,7 @@ class APIModel extends Model
 
     // return all from course_view
     public function getCourseTotalParticipant(){
+
         return $this->db->table($this->totalParticipantsCourse)->get()->getResultArray();
     }
     function getTotalParticipantsByCourseId($courseParticipants, $searchCourseId) {
@@ -42,7 +55,7 @@ class APIModel extends Model
 
     public function getProviderTotalParticipant(){
         $this->curl = curl_init();
-        curl_setopt($this->curl, CURLOPT_URL, 'http://localhost:8081/api/courses/john.doe@example.com/john');
+        curl_setopt($this->curl, CURLOPT_URL, $this->url);
         curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, true);
         $this->response = curl_exec($this->curl);
         curl_close($this->curl);
@@ -53,8 +66,9 @@ class APIModel extends Model
                 $this->course['courses'] = $this->responseData['data']['courses'];
             }
         }
+        $apiModel = new APIModel();
 
-        $totalParticipantsCourses =  $this->db->table($this->totalParticipantsCourse)->get()->getResultArray();
+        $totalParticipantsCourses =  $apiModel->getCourseTotalParticipant();
     
 
 
@@ -90,7 +104,7 @@ class APIModel extends Model
 
     public function getProviderTotalParticipantThisMonth(){
         $this->curl = curl_init();
-        curl_setopt($this->curl, CURLOPT_URL, 'http://localhost:8081/api/courses/john.doe@example.com/john');
+        curl_setopt($this->curl, CURLOPT_URL, $this->url);
         curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, true);
         $this->response = curl_exec($this->curl);
         curl_close($this->curl);
@@ -154,7 +168,7 @@ class APIModel extends Model
 
     public function getAvgRatingProvider(){
         $this->curl = curl_init();
-        curl_setopt($this->curl, CURLOPT_URL, 'http://localhost:8081/api/courses/john.doe@example.com/john');
+        curl_setopt($this->curl, CURLOPT_URL, $this->url);
         curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, true);
         $this->response = curl_exec($this->curl);
         curl_close($this->curl);

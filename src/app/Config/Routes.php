@@ -20,7 +20,9 @@ $routes->get('/courses/(:num)', 'Courses::detail/$1');
 
 
 // API WKWKWKWKWK
+$routes->get('/api/request', 'APIController::request_token');
 $routes->get('/api/courseparticipants', 'APIController::course_participants');
+$routes->get('/api/courseparticipants/(:num)', 'APIController::participantspercourse/$1');
 $routes->get('/api/providerparticipants', 'APIController::provider_participants');
 $routes->get('/api/courserating', 'APIController::course_rating');
 $routes->get('/api/providerrating', 'APIController::provider_rating');
