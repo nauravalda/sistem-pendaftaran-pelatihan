@@ -27,7 +27,7 @@
                     <div class="text-gray-600 my-2 text-2xl font-normal leading-10 items-center">Create Account</div>
                 </div>
                 <!-- <div class="self-stretch h-14 rounded-tl rounded-tr flex-col justify-start items-start flex"> -->
-
+                <form class="flex flex-col w-full gap-[40px]" action="/register" method="POST">
                 <div class="my-2">
                         <label for="name" class="block text-sm font-medium leading-6 text-zinc-900">Company Name</label>
                         <div class="relative rounded-md shadow-sm">
@@ -36,7 +36,7 @@
                                     <path d="M2 17H22V19H2V17ZM3.15 12.95L4 11.47L4.85 12.95L6.15 12.2L5.3 10.72H7V9.22H5.3L6.15 7.75L4.85 7L4 8.47L3.15 7L1.85 7.75L2.7 9.22H1V10.72H2.7L1.85 12.2L3.15 12.95ZM9.85 12.2L11.15 12.95L12 11.47L12.85 12.95L14.15 12.2L13.3 10.72H15V9.22H13.3L14.15 7.75L12.85 7L12 8.47L11.15 7L9.85 7.75L10.7 9.22H9V10.72H10.7L9.85 12.2ZM23 9.22H21.3L22.15 7.75L20.85 7L20 8.47L19.15 7L17.85 7.75L18.7 9.22H17V10.72H18.7L17.85 12.2L19.15 12.95L20 11.47L20.85 12.95L22.15 12.2L21.3 10.72H23V9.22Z" fill="black" />
                                 </svg>
                             </div>
-                            <input type="text" name="name" id="name" class="block w-full rounded border border-zinc-500 py-1.5 pl-12 pr-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-zinc-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 h-12" placeholder="Enter your company name">
+                            <input type="name" name="name" id="name" class="block w-full rounded border border-zinc-500 py-1.5 pl-12 pr-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-zinc-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 h-12" placeholder="Enter your company name">
 
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                                 <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 18H4V8L12 13L20 8V18ZM12 11L4 6H20L12 11Z" fill="black" />
                             </svg>
                         </div>
-                        <input type="text" name="email" id="email" class="block w-full rounded border border-zinc-500 py-1.5 pl-12 pr-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-zinc-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 h-12" placeholder="Enter your email address">
+                        <input type="email" name="email" id="email" class="block w-full rounded border border-zinc-500 py-1.5 pl-12 pr-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-zinc-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 h-12" placeholder="Enter your email address">
                     </div>
 
                     <div class="my-2">
@@ -61,7 +61,7 @@
                                     <path d="M2 17H22V19H2V17ZM3.15 12.95L4 11.47L4.85 12.95L6.15 12.2L5.3 10.72H7V9.22H5.3L6.15 7.75L4.85 7L4 8.47L3.15 7L1.85 7.75L2.7 9.22H1V10.72H2.7L1.85 12.2L3.15 12.95ZM9.85 12.2L11.15 12.95L12 11.47L12.85 12.95L14.15 12.2L13.3 10.72H15V9.22H13.3L14.15 7.75L12.85 7L12 8.47L11.15 7L9.85 7.75L10.7 9.22H9V10.72H10.7L9.85 12.2ZM23 9.22H21.3L22.15 7.75L20.85 7L20 8.47L19.15 7L17.85 7.75L18.7 9.22H17V10.72H18.7L17.85 12.2L19.15 12.95L20 11.47L20.85 12.95L22.15 12.2L21.3 10.72H23V9.22Z" fill="black" />
                                 </svg>
                             </div>
-                            <input type="text" name="phone" id="phone" class="block w-full rounded border border-zinc-500 py-1.5 pl-12 pr-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-zinc-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 h-12" placeholder="Enter your phone number">
+                            <input type="phone" name="phone" id="phone" class="block w-full rounded border border-zinc-500 py-1.5 pl-12 pr-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-zinc-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 h-12" placeholder="Enter your phone number">
 
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                                     <path d="M2 17H22V19H2V17ZM3.15 12.95L4 11.47L4.85 12.95L6.15 12.2L5.3 10.72H7V9.22H5.3L6.15 7.75L4.85 7L4 8.47L3.15 7L1.85 7.75L2.7 9.22H1V10.72H2.7L1.85 12.2L3.15 12.95ZM9.85 12.2L11.15 12.95L12 11.47L12.85 12.95L14.15 12.2L13.3 10.72H15V9.22H13.3L14.15 7.75L12.85 7L12 8.47L11.15 7L9.85 7.75L10.7 9.22H9V10.72H10.7L9.85 12.2ZM23 9.22H21.3L22.15 7.75L20.85 7L20 8.47L19.15 7L17.85 7.75L18.7 9.22H17V10.72H18.7L17.85 12.2L19.15 12.95L20 11.47L20.85 12.95L22.15 12.2L21.3 10.72H23V9.22Z" fill="black" />
                                 </svg>
                             </div>
-                            <input type="text" name="password" id="password" class="block w-full rounded border border-zinc-500 py-1.5 pl-12 pr-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-zinc-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 h-12" placeholder="Enter your password">
+                            <input type="password" name="password" id="password" class="block w-full rounded border border-zinc-500 py-1.5 pl-12 pr-0 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-zinc-600 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 h-12" placeholder="Enter your password">
 
                         </div>
                     </div>
@@ -87,6 +87,9 @@
                         <div class="text-center text-white text-sm font-medium  leading-tight tracking-tight">Create Account</div>
                     </button>
                 </div>
+
+                </form>
+
                 <div class="py-2 justify-center w-full items-center gap-2.5 inline-flex">
                     <div class="text-gray-600 text-base font-normal  leading-normal tracking-wide">Already have an account?</div>
                     <a class="text-violet-900 text-base font-bold  leading-normal tracking-wide" href="/">Login</a>
