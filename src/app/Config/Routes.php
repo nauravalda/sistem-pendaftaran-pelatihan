@@ -16,3 +16,6 @@ $routes->get('/logout', 'Login::logout');
 $routes->get('/mycourses', 'MyCourses::index');
 $routes->get('/courses', 'Courses::index');
 $routes->get('/courses/(:num)', 'Courses::detail/$1');
+
+$routes->get('/enrolledCourseReview', 'EnrolledCourseReview::index');
+$routes->get('/courseView', 'CourseView::index');
