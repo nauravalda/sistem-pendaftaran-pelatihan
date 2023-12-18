@@ -16,6 +16,10 @@ $routes->get('/logout', 'Login::logout');
 $routes->get('/mycourses', 'MyCourses::index');
 $routes->get('/courses', 'Courses::index');
 $routes->get('/courses/(:num)', 'Courses::detail/$1');
+$routes->get('/courses/(:num)/enroll', 'Courses::enroll/$1');
+$routes->post('/courses/(:num)/review', 'Courses::addReview/$1');
+$routes->get('/courses/(:num)/delete', 'Courses::deleteReview/$1');
+// delete review
 
 
 
