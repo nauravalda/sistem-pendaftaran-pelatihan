@@ -11,7 +11,14 @@ class MyCourses extends BaseController
         if (!$session->get('isLoggedIn')) {
             return redirect()->to('/login');
         }
-        $url = 'http://localhost:8081/api/courses/john.doe@example.com/john';
+
+        $apiUrl = getenv('API_URL');
+        $apiKey = getenv('API_KEY');
+
+        $url = $apiUrl . 'courses?' . http_build_query([
+            'apiKey' => $apiKey,
+        ]);
+        
 
         $curl = curl_init();
 
