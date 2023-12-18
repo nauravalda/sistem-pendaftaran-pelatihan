@@ -19,3 +19,6 @@ $routes->get('/courses/(:num)', 'Courses::detail/$1');
 
 $routes->get('/enrolledCourseReview', 'EnrolledCourseReview::index');
 $routes->get('/courseView', 'CourseView::index');
+$routes->post('/enrolledCourseReview/createReview', 'EnrolledCourseReview::createReview');
+$routes->get('/courseReviewAPI', 'CourseReviewAPI::getAll');
+
