@@ -70,4 +70,6 @@ class Courses extends BaseController
         return view('navbar').view('course-detail', $data).view('footer');
 
     }
+
+    public function enroll()
 }
