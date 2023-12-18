@@ -27,8 +27,7 @@ class Login extends BaseController
         if ($user == '') {
             log_message('debug','user is empty');
         }
-        // log_message('debug',$user['email']);
-        // log_message('debug',$user['password']);
+        log_message('debug',$user['email']);
 
         if ($user) {
             $session = session();

@@ -1,21 +1,27 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\EnrollmentModel;
 
 class Courses extends BaseController
 {
     public function index()
     {
-        $url = 'http://localhost:8081/api/courses/john.doe@example.com/john';
+        $apiUrl = getenv('API_URL');
+        $apiKey = getenv('API_KEY');
+
+        $url = $apiUrl . 'courses?' . http_build_query([
+            'apiKey' => $apiKey,
+        ]);
+        log_message('debug', 'URL: ' . $url);
 
         $curl = curl_init();
-
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($curl, CURLOPT_USERAGENT,'');
         $response = curl_exec($curl);
-
-        curl_close($curl);
 
         $data = []; // Inisialisasi data
 
@@ -38,37 +44,55 @@ class Courses extends BaseController
     }
 
     public function detail(int $id){
-        $url = 'http://localhost:8081/api/course/john.doe@example.com/john/'.$id;
+        $apiUrl = getenv('API_URL');
+        $apiKey = getenv('API_KEY');
+        
+        // get course detail
+        $url = $apiUrl . 'course?' . http_build_query([
+            'id' => $id,
+            'apiKey' => $apiKey,
+        ]);
+
         log_message('debug', 'URL: ' . $url);
 
         $curl = curl_init();
-
         curl_setopt($curl, CURLOPT_URL, $url);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($curl, CURLOPT_USERAGENT,'');
         $response = curl_exec($curl);
 
-        curl_close($curl);
+        $enrollmentModel = new EnrollmentModel();
+        $data = [
+            'isEnrolled' => $enrollmentModel->getEnrollmentIdAndCourseId(session()->get('id'), $id) ? true : false
+        ];
 
-        $data = []; // Inisialisasi data
+        if ($data['isEnrolled']) {
+            // checking if user rated the course
+            $ratingModel = new RatingModel();
+        }
 
         if ($response) {
             $responseData = json_decode($response, true);
             log_message('debug', 'Data courses: ' . print_r($responseData, true));
 
             if (isset($responseData['data'])) {
-                $data['course'] = $responseData['data']['course'][0];
+                $data['data'] = $responseData['data'];
 
                 // Mencatat informasi ke dalam log
-                log_message('debug', 'Data course: ' . print_r($data['course'], true));
+                log_message('debug', 'Data course: ' . print_r($data['data'], true));
             } else {
                 log_message('debug', 'Tidak ada data kursus.');
+                return redirect()->to('/courses');
             }
         } else {
             log_message('error', 'Gagal mendapatkan respons dari API.');
+            return redirect()->to('/courses');
         }
-        return view('navbar').view('course-detail', $data).view('footer');
 
+        return view('navbar').view('course-detail', $data).view('footer');
+        // return $this->response->setJSON($data);
     }
 
 }
