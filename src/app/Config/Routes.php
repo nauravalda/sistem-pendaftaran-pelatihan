@@ -17,8 +17,15 @@ $routes->get('/mycourses', 'MyCourses::index');
 $routes->get('/courses', 'Courses::index');
 $routes->get('/courses/(:num)', 'Courses::detail/$1');
 
-$routes->get('/enrolledCourseReview', 'EnrolledCourseReview::index');
-$routes->get('/courseView', 'CourseView::index');
-$routes->post('/enrolledCourseReview/createReview', 'EnrolledCourseReview::createReview');
-$routes->get('/courseReviewAPI', 'CourseReviewAPI::getAll');
 
+
+// API WKWKWKWKWK
+$routes->get('/api/courseparticipants', 'APIController::course_participants');
+$routes->get('/api/providerparticipants', 'APIController::provider_participants');
+$routes->get('/api/courserating', 'APIController::course_rating');
+$routes->get('/api/review', 'APIController::review');
+$routes->get('/api/review/(:num)', 'APIController::courseReview/$1');
+$routes->get('/api/payment', 'APIController::payment');
+$routes->get('/api/payment/(:num)', 'APIController::coursePayment/$1');
+$routes->get('/api/enrollment', 'APIController::enrollment');
+$routes->get('/api/thismonthenrollment', 'APIController::thisMonthEnrollment');

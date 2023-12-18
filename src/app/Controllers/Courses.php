@@ -94,4 +94,6 @@ class Courses extends BaseController
         return view('navbar').view('course-detail', $data).view('footer');
         // return $this->response->setJSON($data);
     }
+
+    public function enroll()
 }
