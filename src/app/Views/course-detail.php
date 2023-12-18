@@ -1,7 +1,3 @@
-<?php
-$ratingValue = 0;
-?>
-
 <body>
   <div class="h-full bg-white">
     <section id="dashboardReview" class="pt-40 pb-20 flex items-center justify-center">
