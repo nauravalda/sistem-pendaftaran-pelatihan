@@ -18,9 +18,21 @@ class APIController extends BaseController
         return $this->response->setJSON($data);
     }
 
+    public function provider_participants_this_month(){
+        $apiModel = new APIModel();
+        $data['provider_participants_this_month'] = $apiModel->getProviderTotalParticipantThisMonth();
+        return $this->response->setJSON($data);
+    }
+
     public function course_rating(){
         $apiModel = new APIModel();
         $data['course_rating'] = $apiModel->getAvgRatingCourse();
+        return $this->response->setJSON($data);
+    }
+
+    public function provider_rating(){
+        $apiModel = new APIModel();
+        $data['provider_rating'] = $apiModel->getAvgRatingProvider();
         return $this->response->setJSON($data);
     }
 
