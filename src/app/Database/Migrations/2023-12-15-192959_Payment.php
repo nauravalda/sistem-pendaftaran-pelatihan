@@ -30,7 +30,7 @@ class Payment extends Migration
             ],
             'datetime' => [
                 'type' => 'DATETIME',
-                'default' => $this->expressions()->currentTimestamp(),
+                'null' => true,
             ],
             'status' => [
                 'type' => 'TINYINT',

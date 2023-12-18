@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Learn Sphere</title>
+  <title>SkillHub</title>
   <meta name="description" content="The small framework with powerful features">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="image/png" href="/favicon.ico">
@@ -13,7 +13,7 @@
 
 <body>
 
-  <div class="w-full h-screen p-24 px-44 bg-on-primary-fixed justify-start items-start inline-flex">
+  <div class="w-full h-screen p-24 px-44 bg-[#4F378B] justify-start items-start inline-flex">
     <div class="grow shrink rounded-3xl shadow-2xl self-stretch inline-flex">
       <div class="px-10 rounded-l-3xl py-10 bg-white w-full h-full items-center justify center">
         <div class="w-full justify-center items-center flex-col">

@@ -19,15 +19,13 @@ class User extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 50,
             ],
-            'full_name' => [
+            'name' => [
                 'type' => 'VARCHAR',
                 'constraint' => 50,
                 'null' => true,
             ],
             'password' => [
-                'type' => 'VARCHAR',
-                'constraint' => 50,
-                'null' => true,
+                'type' => 'TEXT',
             ],
             'phone_number' => [
                 'type' => 'VARCHAR',

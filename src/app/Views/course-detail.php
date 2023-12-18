@@ -15,13 +15,13 @@
   <div class=" self-stretch justify-start items-start gap-12 inline-flex">
     <div class="bg-white grow shrink basis-0 self-stretch p-10 rounded-3xl border gap-8 border-stone-300 justify-start items-start flex">
       <div class="w-full grow shrink flex-col justify-start items-start gap-6 inline-flex">
-        <div class="self-stretch text-black text-3xl font-bold leading-9"><?= $course['name']; ?></div>
+        <div class="self-stretch text-black text-3xl font-bold leading-9"><?= $data['course']['name']; ?></div>
         <div class="rounded-lg border border-stone-300 justify-center items-center inline-flex">
           <div class="w-36 px-4 py-1.5 justify-center items-center gap-2 flex">
-            <div class="text-center text-light-primary text-base  font-medium  leading-tight tracking-normal">Rp <?= number_format($course['price'], 0, ',', '.'); ?></div>
+            <div class="text-center text-light-primary text-base  font-medium  leading-tight tracking-normal">Rp <?= number_format($data['course']['price'], 0, ',', '.'); ?></div>
           </div>
         </div>
-        <div class="self-stretch text-zinc-700 text-base font-normal  leading-normal tracking-wide"><?= $course['desc']; ?></div>
+        <div class="self-stretch text-zinc-700 text-base font-normal  leading-normal tracking-wide"><?= $data['course']['desc']; ?></div>
         <div class="justify-start items-start gap-2 inline-flex">
           <div class="w-24 flex-col justify-start items-center gap-1 inline-flex">
             <div class="justify-start inline-flex">
@@ -56,11 +56,11 @@
           <div class="text-center text-zinc-900 text-sm font-normal pt-1 leading-tight tracking-tight">4.95 / 5</div>
           <div class="text-center text-zinc-900 text-sm font-normal pt-1 leading-tight tracking-tight">(99 rating)</div>
         </div>
-        <div class="self-stretch text-zinc-700 text-base font-normal line-clamp-2 leading-normal tracking-wide"><?= $course['tags']; ?></div>
+        <div class="self-stretch text-zinc-700 text-base font-normal line-clamp-2 leading-normal tracking-wide"><?= $data['course']['tags']; ?></div>
       </div>
       <div class="border-l h-full mx-4"></div>
       <div class=" w-8/12 flex-col justify-start items-start gap-4 inline-flex">
-        <div class="self-stretch text-zinc-700 text-base font-normal leading-normal tracking-wide"><?= $course['locations']; ?></div>
+        <div class="self-stretch text-zinc-700 text-base font-normal leading-normal tracking-wide"><?= $data['course']['locations']; ?></div>
         <div class="self-stretch"><span style="text-zinc-700 text-base font-normal  leading-normal tracking-wide">Participants: </span><span style="text-zinc-700 text-base font-bold  leading-normal tracking-wide">99/100</span></div>
         <div class="self-stretch h-16 flex-col justify-start items-start flex">
           <div class="self-stretch text-zinc-700 text-base font-normal  leading-normal tracking-wide">Schedule:</div>
@@ -146,7 +146,7 @@
   <div class="self-stretch justify-center items-start gap-6 inline-flex">
     <div class="grow shrink basis-0 self-stretch p-12 bg-white rounded-3xl border border-stone-300 flex-col justify-start items-start gap-2.5 inline-flex">
       <div class="w-64 text-black text-3xl font-bold  leading-9">What You'll Learn</div>
-      <div class="self-stretch text-zinc-700 text-base font-normal  leading-normal tracking-wide"><?= $course['what_you_will_learn']; ?></div>
+      <div class="self-stretch text-zinc-700 text-base font-normal  leading-normal tracking-wide"><?= $data['course']['what_you_will_learn']; ?></div>
     </div>
     <div class="grow shrink basis-0 self-stretch p-12 bg-white rounded-3xl border border-stone-300 flex-col justify-start items-start gap-2.5 inline-flex">
       <div class="w-64 text-black text-3xl font-bold  leading-9">Course Content</div>
@@ -155,14 +155,14 @@
           <?php
           // Memecah string berdasarkan nomor urutan
 
-          $parts = preg_split('/(\d+\. )/', $course['course_content'], -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
+          $parts = preg_split('/(\d+\. )/', $data['course']['course_content'], -1, PREG_SPLIT_NO_EMPTY | PREG_SPLIT_DELIM_CAPTURE);
 
 
           // Menampilkan setiap elemen dalam format HTML dengan nomor urutan
           echo '<ol>';
 
           if (count($parts) === 0 || $parts[0] !== '1. ' || count($parts) === 1) {
-            echo '<li>' . $course['course_content'] . '</li>';
+            echo '<li>' . $data['course']['course_content'] . '</li>';
           } else {
             for ($i = 0; $i < count($parts); $i += 2) {
               echo '<li>' . $parts[$i] . $parts[$i + 1] . '</li>';
@@ -177,6 +177,6 @@
   </div>
   <div class="self-stretch h-full p-12 bg-white rounded-3xl border border-stone-300 flex-col justify-start items-start gap-6 flex">
     <div class="w-64 text-black text-3xl font-bold  leading-9">Description</div>
-    <div class="self-stretch"><span style="text-zinc-700 text-base font-normal  leading-normal tracking-wide"><?= $course['desc']; ?></div>
+    <div class="self-stretch"><span style="text-zinc-700 text-base font-normal  leading-normal tracking-wide"><?= $data['course']['desc']; ?></div>
   </div>
 </div>
