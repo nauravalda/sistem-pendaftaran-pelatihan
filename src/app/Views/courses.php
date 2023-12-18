@@ -2,7 +2,7 @@
   <div class="h-full bg-white">
     <section id="dashboardReview" class="pt-40 pb-20 flex items-center justify-center">
       <div class="container">
-        <div class="h-full min-h-screen w-full flex-col justify-center items-center gap-6 inline-flex">
+        <div class="h-full min-h-screen w-full flex-col content-start gap-6 inline-flex">
           <div class="self-stretch text-black text-display-md font-medium">Explore Course</div>
 
 

@@ -19,8 +19,11 @@ $routes->get('/courses/(:num)', 'Courses::detail/$1');
 $routes->get('/courses/(:num)/enroll', 'Courses::enroll/$1');
 $routes->post('/courses/(:num)/review', 'Courses::addReview/$1');
 $routes->get('/courses/(:num)/delete', 'Courses::deleteReview/$1');
-// delete review
 
+$routes->get('/schedule', function() {
+    return redirect()->to(base_url('schedule/3'));
+});
+$routes->get('/schedule/(:num)', 'Schedule::index/$1');
 
 
 // API WKWKWKWKWK
