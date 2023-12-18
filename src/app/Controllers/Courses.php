@@ -71,5 +71,4 @@ class Courses extends BaseController
 
     }
 
-    public function enroll()
 }
