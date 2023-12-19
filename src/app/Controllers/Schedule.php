@@ -40,6 +40,7 @@ class Schedule extends BaseController
         $response = curl_exec($curl);
 
         $data = []; // Inisialisasi data
+        $data['schedule'] = [];
 
         if ($response) {
             $responseData = json_decode($response, true);
@@ -56,5 +57,6 @@ class Schedule extends BaseController
         }
         $data['day'] = $numDays;
         return view('navbar').view('schedule', $data).view('footer');
+        // return $this->response->setJSON($data);
     }
 }

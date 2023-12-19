@@ -50,14 +50,15 @@ class MyCourses extends BaseController
         $enrollmentModel = new EnrollmentModel();
         $enrollments = $enrollmentModel->getEnrollmentById($session->get('id'));
 
+
+
         for ($i = 0; $i < count($enrollments); $i++) {
-            $data['mycourses'][$i] = $courses['courses'][$enrollments[$i]['course_id']];
+            for ($j = 0; $j < count($courses['courses']); $j++) {
+                if ($enrollments[$i]['course_id'] == $courses['courses'][$j]['id']) {
+                    $data['mycourses'][] = $courses['courses'][$j];
+                }
+            }
         }
-
-
-        
-
-        
 
         return view('navbar').view('mycourses', $data).view('footer');
     }
