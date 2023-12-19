@@ -6,7 +6,7 @@
           <div class="self-stretch text-black text-display-md font-medium">My Course Collections</div>
   
 
-          <?php if (is_array($mycourses)): ?>
+          <?php if (!empty($mycourses) && is_array($mycourses)): ?>
             <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-24">
               <?php foreach ($mycourses as $courseItem): ?>
                 <div class="w-full h-full bg-sys-light-surface rounded-xl justify-start items-start inline-flex">
