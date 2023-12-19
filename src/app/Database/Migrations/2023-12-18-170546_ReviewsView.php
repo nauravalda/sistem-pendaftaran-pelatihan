@@ -25,6 +25,6 @@ class ReviewsView extends Migration
 
     public function down()
     {
-        $this->db->query("DROP VIEW view_reviews");   
+        $this->db->query("DROP VIEW reviews_view");   
     }
 }
