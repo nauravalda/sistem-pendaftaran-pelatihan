@@ -32,6 +32,10 @@ class User extends Migration
                 'constraint' => 50,
                 'null' => true,
             ],
+            'api_token' => [
+                'type' => 'TEXT',
+                'null' => true,
+            ],
         ]);
 
         $this->forge->addKey('id', true);

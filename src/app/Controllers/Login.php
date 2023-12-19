@@ -24,12 +24,13 @@ class Login extends BaseController
         $userModel = new UserModel();
         
         $user = $userModel->getUserByEmailAndPassword($email, $password);
-        if ($user == '') {
+        // return $this->response->setJSON($user);
+        if ($user == null) {
             log_message('debug','user is empty');
         }
-        log_message('debug',$user['email']);
-
+        
         if ($user) {
+            log_message('debug',$user['email']);
             $session = session();
             $session->set([
                 'id' => $user['id'],
