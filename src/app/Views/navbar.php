@@ -68,7 +68,7 @@
                 <div class="text-center text-zinc-900 text-xs font-semibold  leading-none tracking-wide">
                     Schedule</div>
             </button>
-            <button class="h-14 px-1 flex flex-col py-1 gap-1 rounded-2xl justify-center items-center hover:bg-ref-primary-primary90"onclick="window.location.href = '/profile';">
+            <button class="h-14 px-1 flex flex-col py-1 gap-1 rounded-2xl justify-center items-center hover:bg-ref-primary-primary90"onclick="window.location.href = '/';">
                 <div class=" rounded-full justify-center items-center inline-flex">
     
                     <div class="px-4 py-1 justify-center items-center flex">
