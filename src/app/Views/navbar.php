@@ -94,7 +94,7 @@
                                 </svg>
                             </div>
                         </div>
-                        <div class="self-stretch text-center text-zinc-700 text-xs font-sans font-medium  leading-none tracking-wide">Logout</div>
+                        <div class="self-stretch text-center text-zinc-700 text-xs font-sans font-semibold leading-none tracking-wide">Logout</div>
                     </button>
         </div>
     </div>
