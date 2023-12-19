@@ -68,7 +68,7 @@
                 <div class="text-center text-zinc-900 text-xs font-semibold  leading-none tracking-wide">
                     Schedule</div>
             </button>
-            <button class="h-14 px-1 flex flex-col py-1 gap-1 rounded-2xl justify-center items-center hover:bg-ref-primary-primary90"onclick="window.location.href = '/profile';">
+            <button class="h-14 px-1 flex flex-col py-1 gap-1 rounded-2xl justify-center items-center hover:bg-ref-primary-primary90"onclick="window.location.href = '/';">
                 <div class=" rounded-full justify-center items-center inline-flex">
     
                     <div class="px-4 py-1 justify-center items-center flex">
@@ -84,6 +84,18 @@
                 <div class="text-center text-zinc-900 text-xs font-semibold  leading-none tracking-wide">
                     Profile</div>
             </button>
+            <button 
+                    onclick="window.location.href = '/logout';"
+                    class="flex flex-col py-2 rounded-full justify-center items-center inline-flex hover:bg-fuchsia-100">
+                        <div class="px-4 py-1 justify-center items-center inline-flex">
+                            <div class="w-6 h-6 relative">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M19 7V11H6.83L10.41 7.41L9 6L3 12L9 18L10.41 16.59L6.83 13H21V7H19Z" fill="#49454F" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="self-stretch text-center text-zinc-700 text-xs font-sans font-medium  leading-none tracking-wide">Logout</div>
+                    </button>
         </div>
     </div>
 

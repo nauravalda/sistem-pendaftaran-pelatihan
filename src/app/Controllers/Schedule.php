@@ -20,6 +20,7 @@ class Schedule extends BaseController
         foreach ($enrollments as $enrollment) {
             $enrollmentIds[] = $enrollment['course_id'];
         }
+        log_message('debug', 'Enrollment IDs: ' . print_r($enrollmentIds, true));
 
         $apiUrl = getenv('API_URL');
         $apiKey = getenv('API_KEY');
@@ -45,7 +46,6 @@ class Schedule extends BaseController
 
             if (isset($responseData['data']['schedule'])) {
                 $data['schedule'] = $responseData['data']['schedule'];
-
                 // Mencatat informasi ke dalam log
                 log_message('debug', 'Data schedule: ' . print_r($data['schedule'], true));
             } else {
@@ -54,9 +54,7 @@ class Schedule extends BaseController
         } else {
             log_message('error', 'Gagal mendapatkan respons dari API.');
         }
-
         $data['day'] = $numDays;
-
         return view('navbar').view('schedule', $data).view('footer');
     }
 }

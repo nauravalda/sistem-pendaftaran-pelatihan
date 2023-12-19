@@ -67,7 +67,7 @@
                   </div>
                   <div
                     class="text-center text-sys-light-on-surface text-body-md text-body-lg pt-1 leading-tight tracking-tight">
-                    <?= $course['rating']; ?>/5
+                    <?= number_format($course['rating'],2); ?>/5
                   </div>
                   <div
                     class="text-center text-sys-light-on-surface text-body-md text-body-lg pt-1 leading-tight tracking-tight">
