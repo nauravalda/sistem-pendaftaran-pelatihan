@@ -9,9 +9,9 @@ class ReviewsView extends Migration
     public function up()
     {
         $sql = "
-            CREATE VIEW view_reviews AS
+            CREATE VIEW reviews_view AS
             SELECT
-                user.id AS id,
+                user.id AS user_id,
                 user.name AS name,
                 review.course_id AS course_id,
                 review.content AS content,
