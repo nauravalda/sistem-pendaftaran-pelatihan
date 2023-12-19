@@ -21,6 +21,11 @@ class CourseEnrollment extends Migration
                 'constraint' => 11,
                 'unsigned' => true,
             ],
+            'enrolled_at' => [
+                'type' => 'DATETIME',
+                'null' => true,
+                'default' => null,
+            ],
         ]);
 
         $this->forge->addForeignKey('user_id', 'user', 'id', 'CASCADE', 'CASCADE');

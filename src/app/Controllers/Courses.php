@@ -131,6 +131,7 @@ class Courses extends BaseController
             $enrollmentModel->insertEnrollment([
                 'user_id' => session()->get('id'),
                 'course_id' => $id,
+                'enrolled_at' => date('Y-m-d H:i:s'),
             ]);
             return redirect()->to('/courses/' . $id);
         }
