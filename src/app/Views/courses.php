@@ -25,7 +25,11 @@ v
         </div>
 
 
-        <?php if (is_array($courses)) : ?>
+        <?php
+
+                                    use function PHPUnit\Framework\isEmpty;
+
+ if (is_array($courses)) : ?>
             <div class="flex flex-wrap lg:flex-no-wrap justify-start mx-6 my-10 py-4 gap-9">
                 <?php foreach ($courses as $courseItem) : ?>
                     <div class="w-96 h-full bg-fuchsia-50 rounded-xl justify-start items-start inline-flex">

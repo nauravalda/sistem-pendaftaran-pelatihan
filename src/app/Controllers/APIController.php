@@ -220,5 +220,51 @@ class APIController extends BaseController
 
     }
 
+    public function totalParticipants(){
+        $request = service('request');
+        $apiKey = $request->getVar('apiKey');
+        $user = new UserModel();
+        $user = $user->getUserByToken($apiKey);
+        $string = $request->getVar('courses');
+
+        if ($user) {
+            $apiModel = new APIModel();
+            $data['total_participants'] = $apiModel->getTotalParticipantsinArrayofCourses($string);
+            return $this->response->setJSON($data);
+        } else {
+            return $this->response->setStatusCode(401);
+        }
+    }
+
+    public function totalParticipantsThisMonth(){
+        $request = service('request');
+        $apiKey = $request->getVar('apiKey');
+        $string = $request->getVar('courses');
+        $user = new UserModel();
+        $user = $user->getUserByToken($apiKey);
+        if ($user) {
+            $apiModel = new APIModel();
+            $data['total_participants_this_month'] = $apiModel->getTotalParticipantsThisMonth($string);
+            return $this->response->setJSON($data);
+        } else {
+            return $this->response->setStatusCode(401);
+        }
+    }
+
+    public function averageRatingCourses(){
+        $request = service('request');
+        $apiKey = $request->getVar('apiKey');
+        $string = $request->getVar('courses');
+        $user = new UserModel();
+        $user = $user->getUserByToken($apiKey);
+        if ($user) {
+            $apiModel = new APIModel();
+            $data['average_rating_courses'] = $apiModel->getAvgRatingofArray($string);
+            return $this->response->setJSON($data);
+        } else {
+            return $this->response->setStatusCode(401);
+        }
+    }
+
     
 }
